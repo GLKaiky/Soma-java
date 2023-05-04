@@ -28,6 +28,11 @@ public class somaServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+        float a = Float.parseFloat(request.getParameter("n1"));
+        float b = Float.parseFloat(request.getParameter("n2"));
+        
+        
         response.setContentType("text/html;charset=UTF-8");
         try ( PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
@@ -37,7 +42,10 @@ public class somaServlet extends HttpServlet {
             out.println("<title>Servlet somaServlet</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet somaServlet at " + request.getContextPath() + "</h1>");
+            out.println("<h3>Numeros digitados pelo usuário</h3>");
+            out.println("Número 1:" +a+"<br>");
+            out.println("Número 1:" +b+"<br>");
+            out.println("<h3>Soma: " +(a+b)+ "</h3>");
             out.println("</body>");
             out.println("</html>");
         }
